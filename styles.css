@@ -1,70 +1,61 @@
 /* ==========================================================================
-   ARACELI MORALES • PRIVATE PLATFORM  —  v2 refinement (OMEN)
-   Real Apple restraint: true black, one disciplined accent, hairline glass,
-   quiet depth. Same class contract as v1 (nothing renamed) — only elevated.
+   ARACELI MORALES • PRIVATE PLATFORM — v3 (OMEN)
+   Onyx & Rose-Gold couture. Manrope + Fraunces. One warm metallic accent,
+   ivory ink, hairline glass, quiet depth. Same class contract as before.
    ========================================================================== */
 
 :root {
-  /* Canvas & tiered surfaces — warm-neutral, no maroon wash */
-  --apple-black: #000000;
-  --apple-surface-0: #000000;
-  --apple-surface-1: #08080A;
-  --apple-surface-2: #0E0E12;
-  --apple-surface-3: #16161B;
-  --apple-surface-card: rgba(18, 18, 22, 0.72);
+  /* Warm onyx canvas + tiered surfaces */
+  --apple-black: #050403;
+  --apple-surface-0: #050403;
+  --apple-surface-1: #0A0807;
+  --apple-surface-2: #100D0C;
+  --apple-surface-3: #171312;
+  --apple-surface-card: rgba(22, 18, 17, 0.72);
 
-  /* Rose titanium spectrum — one confident accent, champagne only whispers */
-  --titanium-rose: #FF7A93;
-  --titanium-crimson: #FF375F;      /* Apple-grade crimson, the single accent */
-  --titanium-silk: #F6D9D2;
-  --titanium-champagne: #E8D6BE;
-  --titanium-gold: #CDB68C;
-  --titanium-platinum: #9A9AA2;
-  --titanium-dark: #141013;
+  /* Rose-gold & champagne — one confident metallic accent family */
+  --titanium-rose: #DDA097;         /* rose gold light */
+  --titanium-crimson: #C98A86;      /* the accent (rose gold) */
+  --titanium-silk: #F0D8CE;
+  --titanium-champagne: #E0C99C;    /* champagne gold, second whisper */
+  --titanium-gold: #CBA96B;
+  --titanium-platinum: #A39A92;
+  --titanium-dark: #14100E;
 
-  /* Text (Apple neutrals) */
-  --ink: #F5F5F7;
-  --ink-2: #A1A1A6;
-  --ink-3: #6E6E73;
+  /* Warm ivory ink */
+  --ink: #F4EFE7;
+  --ink-2: #B6ABA0;
+  --ink-3: #786E65;
 
-  /* Backward-compatibility tokens (kept so nothing that references them breaks) */
-  --apple-surface: #08080A;
-  --apple-card: rgba(18, 18, 22, 0.72);
-  --apple-card-border: rgba(255, 255, 255, 0.08);
-  --apple-specular: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.28);
-  --apple-pink: #FF375F;
-  --apple-blush: #FF7A93;
-  --apple-silk: #F6D9D2;
-  --apple-gold: #CDB68C;
-  --apple-cyan: #FF7A93;             /* remapped: cyan retired, folds into rose */
+  /* Back-compat tokens */
+  --apple-surface: #0A0807;
+  --apple-card: rgba(22, 18, 17, 0.72);
+  --apple-card-border: rgba(255, 244, 235, 0.08);
+  --apple-specular: inset 0 0.5px 0 0 rgba(255, 246, 238, 0.28);
+  --apple-pink: #C98A86;
+  --apple-blush: #DDA097;
+  --apple-silk: #F0D8CE;
+  --apple-gold: #E0C99C;
+  --apple-cyan: #DDA097;
 
-  /* Sub-pixel specular highlights — softer than v1 */
-  --specular-05: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.32);
-  --specular-rose: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.28), inset 0 1px 0 0 rgba(255, 122, 147, 0.14);
-  --specular-card: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.22), inset 0 0 0 0.5px rgba(255, 255, 255, 0.05);
-  --specular-crimson: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.34);
+  --specular-05: inset 0 0.5px 0 0 rgba(255, 246, 238, 0.30);
+  --specular-rose: inset 0 0.5px 0 0 rgba(255, 246, 238, 0.26), inset 0 1px 0 0 rgba(221, 160, 151, 0.16);
+  --specular-card: inset 0 0.5px 0 0 rgba(255, 246, 238, 0.20), inset 0 0 0 0.5px rgba(255, 246, 238, 0.05);
+  --specular-crimson: inset 0 0.5px 0 0 rgba(255, 246, 238, 0.32);
 
-  /* Hairline borders */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-titanium: rgba(255, 122, 147, 0.20);
-  --border-crimson: rgba(255, 55, 95, 0.24);
+  --border-subtle: rgba(255, 246, 238, 0.08);
+  --border-titanium: rgba(221, 160, 151, 0.22);
+  --border-crimson: rgba(201, 138, 134, 0.26);
 
-  /* Motion */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Never let anything spill sideways on a phone */
 html, body { max-width: 100%; overflow-x: hidden; }
-/* Let flex/grid children shrink instead of forcing the page wider than the
-   viewport (kills the sideways clip). Zero-specificity so nothing is overridden. */
 main :where(.flex, .grid) > :where(*) { min-width: 0; }
 
-/* ==================== SYSTEM TYPOGRAPHY ==================== */
-/* Plus Jakarta sits right after the SF stack so non-Apple phones get the
-   intended face (renders identically everywhere → reads real, not templated) */
+/* ==================== TYPOGRAPHY ==================== */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
-               "Plus Jakarta Sans", "Helvetica Neue", sans-serif;
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
   background-color: var(--apple-black);
   color: var(--ink);
   letter-spacing: -0.014em;
@@ -73,15 +64,16 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Negative tracking hierarchy — a touch tighter for that display polish */
-.tracking-tightest { letter-spacing: -0.045em; }
-.tracking-display  { letter-spacing: -0.034em; }
-.tracking-headline { letter-spacing: -0.021em; }
-.tracking-body     { letter-spacing: -0.011em; }
+/* Fraunces reserved for couture display moments (monogram, .font-serif) */
+.font-serif { font-family: "Fraunces", Georgia, serif !important; font-optical-sizing: auto; }
 
-/* Micro-labels — classier: Jakarta, not terminal-mono; a hair larger */
+.tracking-tightest { letter-spacing: -0.04em; }
+.tracking-display  { letter-spacing: -0.03em; }
+.tracking-headline { letter-spacing: -0.02em; }
+.tracking-body     { letter-spacing: -0.01em; }
+
 .micro-label {
-  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Manrope", -apple-system, sans-serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -90,286 +82,185 @@ body {
   align-items: center;
   gap: 6px;
 }
-
 .micro-label-rose {
   color: var(--titanium-rose);
-  background: rgba(255, 122, 147, 0.07);
-  border: 0.5px solid rgba(255, 122, 147, 0.26);
-  padding: 4px 11px;
-  border-radius: 9999px;
-  box-shadow: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.16);
+  background: rgba(221, 160, 151, 0.08);
+  border: 0.5px solid rgba(221, 160, 151, 0.28);
+  padding: 4px 11px; border-radius: 9999px;
+  box-shadow: inset 0 0.5px 0 0 rgba(255, 246, 238, 0.16);
 }
-
 .micro-label-gold {
-  color: #EADCC4;
-  background: rgba(205, 182, 140, 0.07);
-  border: 0.5px solid rgba(205, 182, 140, 0.24);
-  padding: 4px 11px;
-  border-radius: 9999px;
-  box-shadow: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.14);
+  color: #EAD9BB;
+  background: rgba(224, 201, 156, 0.08);
+  border: 0.5px solid rgba(224, 201, 156, 0.26);
+  padding: 4px 11px; border-radius: 9999px;
+  box-shadow: inset 0 0.5px 0 0 rgba(255, 246, 238, 0.14);
 }
-
 .micro-label-crimson {
-  color: #FF6B87;
-  background: rgba(255, 55, 95, 0.07);
-  border: 0.5px solid rgba(255, 55, 95, 0.26);
-  padding: 4px 11px;
-  border-radius: 9999px;
-  box-shadow: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.16);
+  color: #D79A94;
+  background: rgba(201, 138, 134, 0.08);
+  border: 0.5px solid rgba(201, 138, 134, 0.28);
+  padding: 4px 11px; border-radius: 9999px;
+  box-shadow: inset 0 0.5px 0 0 rgba(255, 246, 238, 0.16);
 }
 
-/* ==================== APPLE LIQUID MATERIALS ==================== */
-/* Real glass is subtle: less blur, calmer saturation, hairline edge, quiet lift */
+/* ==================== LIQUID MATERIALS ==================== */
 .apple-glass {
-  background: rgba(16, 16, 20, 0.70);
-  backdrop-filter: blur(30px) saturate(150%);
-  -webkit-backdrop-filter: blur(30px) saturate(150%);
-  border: 0.5px solid rgba(255, 255, 255, 0.09);
+  background: rgba(20, 16, 15, 0.70);
+  backdrop-filter: blur(30px) saturate(140%);
+  -webkit-backdrop-filter: blur(30px) saturate(140%);
+  border: 0.5px solid rgba(255, 246, 238, 0.09);
   box-shadow: var(--specular-card), 0 18px 40px -20px rgba(0, 0, 0, 0.8);
   border-radius: 26px;
 }
-
 .apple-glass-rose {
-  background: linear-gradient(180deg, rgba(26, 18, 22, 0.66) 0%, rgba(14, 12, 15, 0.86) 100%);
-  backdrop-filter: blur(30px) saturate(150%);
-  -webkit-backdrop-filter: blur(30px) saturate(150%);
-  border: 0.5px solid rgba(255, 122, 147, 0.20);
+  background: linear-gradient(180deg, rgba(34, 24, 22, 0.66) 0%, rgba(16, 13, 12, 0.86) 100%);
+  backdrop-filter: blur(30px) saturate(140%);
+  -webkit-backdrop-filter: blur(30px) saturate(140%);
+  border: 0.5px solid rgba(221, 160, 151, 0.22);
   box-shadow: var(--specular-rose), 0 18px 44px -20px rgba(0, 0, 0, 0.82);
   border-radius: 26px;
 }
-
 .apple-glass-interactive {
-  transition: transform 0.3s var(--ease-out),
-              box-shadow 0.3s var(--ease-out),
-              border-color 0.3s ease;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), border-color 0.3s ease;
 }
 .apple-glass-interactive:hover {
   transform: translateY(-2px);
-  border-color: rgba(255, 122, 147, 0.38);
+  border-color: rgba(221, 160, 151, 0.4);
   box-shadow: var(--specular-rose), 0 26px 52px -22px rgba(0, 0, 0, 0.9);
 }
-.apple-glass-interactive:active {
-  transform: scale(0.99);
-  transition-duration: 0.1s;
-}
+.apple-glass-interactive:active { transform: scale(0.99); transition-duration: 0.1s; }
 
-/* ==================== MONUMENTAL MEMBERSHIP CARDS ==================== */
-/* Quiet warm depth instead of a saturated maroon flood; softer, deeper shadow */
+/* ==================== MEMBERSHIP CARDS ==================== */
 .membership-card-director {
   position: relative;
-  background: radial-gradient(120% 100% at 50% 0%, rgba(30, 22, 26, 0.55) 0%, rgba(9, 9, 11, 0.94) 72%), #08080A;
-  backdrop-filter: blur(36px) saturate(150%);
-  -webkit-backdrop-filter: blur(36px) saturate(150%);
-  border: 0.5px solid rgba(232, 214, 190, 0.20);
-  box-shadow: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.36),
-              inset 0 1px 0 0 rgba(232, 214, 190, 0.12),
-              0 34px 70px -34px rgba(0, 0, 0, 0.9);
-  border-radius: 30px;
-  overflow: hidden;
-  transition: transform 0.4s var(--ease-out),
-              box-shadow 0.4s var(--ease-out),
-              border-color 0.4s ease;
+  background: radial-gradient(120% 100% at 50% 0%, rgba(40, 32, 24, 0.5) 0%, rgba(10, 8, 7, 0.94) 72%), #0A0807;
+  backdrop-filter: blur(34px) saturate(140%);
+  -webkit-backdrop-filter: blur(34px) saturate(140%);
+  border: 0.5px solid rgba(224, 201, 156, 0.22);
+  box-shadow: inset 0 0.5px 0 0 rgba(255, 246, 238, 0.34), inset 0 1px 0 0 rgba(224, 201, 156, 0.12), 0 34px 70px -34px rgba(0, 0, 0, 0.9);
+  border-radius: 30px; overflow: hidden;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out), border-color 0.4s ease;
 }
 .membership-card-director:hover {
   transform: translateY(-4px);
-  border-color: rgba(232, 214, 190, 0.40);
-  box-shadow: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.5),
-              inset 0 1px 0 0 rgba(232, 214, 190, 0.2),
-              0 44px 90px -38px rgba(0, 0, 0, 0.95);
+  border-color: rgba(224, 201, 156, 0.42);
+  box-shadow: inset 0 0.5px 0 0 rgba(255, 246, 238, 0.5), inset 0 1px 0 0 rgba(224, 201, 156, 0.2), 0 44px 90px -38px rgba(0, 0, 0, 0.95);
 }
-
 .membership-card-athlete {
   position: relative;
-  background: radial-gradient(120% 100% at 50% 0%, rgba(34, 18, 24, 0.55) 0%, rgba(10, 9, 12, 0.94) 72%), #08080A;
-  backdrop-filter: blur(36px) saturate(150%);
-  -webkit-backdrop-filter: blur(36px) saturate(150%);
-  border: 0.5px solid rgba(255, 55, 95, 0.20);
-  box-shadow: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.36),
-              inset 0 1px 0 0 rgba(255, 122, 147, 0.12),
-              0 34px 70px -34px rgba(0, 0, 0, 0.9);
-  border-radius: 30px;
-  overflow: hidden;
-  transition: transform 0.4s var(--ease-out),
-              box-shadow 0.4s var(--ease-out),
-              border-color 0.4s ease;
+  background: radial-gradient(120% 100% at 50% 0%, rgba(42, 28, 26, 0.5) 0%, rgba(11, 9, 8, 0.94) 72%), #0A0807;
+  backdrop-filter: blur(34px) saturate(140%);
+  -webkit-backdrop-filter: blur(34px) saturate(140%);
+  border: 0.5px solid rgba(221, 160, 151, 0.22);
+  box-shadow: inset 0 0.5px 0 0 rgba(255, 246, 238, 0.34), inset 0 1px 0 0 rgba(221, 160, 151, 0.12), 0 34px 70px -34px rgba(0, 0, 0, 0.9);
+  border-radius: 30px; overflow: hidden;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out), border-color 0.4s ease;
 }
 .membership-card-athlete:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 55, 95, 0.42);
-  box-shadow: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.5),
-              inset 0 1px 0 0 rgba(255, 122, 147, 0.2),
-              0 44px 90px -38px rgba(0, 0, 0, 0.95);
+  border-color: rgba(221, 160, 151, 0.44);
+  box-shadow: inset 0 0.5px 0 0 rgba(255, 246, 238, 0.5), inset 0 1px 0 0 rgba(221, 160, 151, 0.2), 0 44px 90px -38px rgba(0, 0, 0, 0.95);
 }
 
-/* Laser-etched watermark — kept, a touch more present but still a whisper */
 .card-watermark {
-  position: absolute;
-  right: -18px;
-  bottom: -22px;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Plus Jakarta Sans", sans-serif;
-  font-weight: 800;
-  font-size: 132px;
-  line-height: 1;
-  color: rgba(255, 255, 255, 0.022);
-  pointer-events: none;
-  user-select: none;
-  letter-spacing: -0.07em;
+  position: absolute; right: -18px; bottom: -22px;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600; font-size: 128px; line-height: 1;
+  color: rgba(255, 246, 238, 0.022);
+  pointer-events: none; user-select: none; letter-spacing: -0.06em;
 }
 
-/* Micro metallic chip — refined champagne, softer facets */
 .titanium-chip {
-  width: 36px;
-  height: 26px;
-  border-radius: 5px;
+  width: 36px; height: 26px; border-radius: 5px;
   background: linear-gradient(135deg, #F0DCC2 0%, #C9AE86 48%, #8C7458 100%);
   position: relative;
   box-shadow: inset 0 0.5px 0 rgba(255, 255, 255, 0.55), 0 2px 5px rgba(0, 0, 0, 0.55);
   border: 0.5px solid rgba(255, 255, 255, 0.22);
 }
-.titanium-chip::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 0; right: 0;
-  height: 0.5px;
-  background: rgba(0, 0, 0, 0.28);
-}
-.titanium-chip::after {
-  content: '';
-  position: absolute;
-  left: 50%; top: 0; bottom: 0;
-  width: 0.5px;
-  background: rgba(0, 0, 0, 0.28);
-}
+.titanium-chip::before { content:''; position:absolute; top:50%; left:0; right:0; height:0.5px; background:rgba(0,0,0,0.28); }
+.titanium-chip::after { content:''; position:absolute; left:50%; top:0; bottom:0; width:0.5px; background:rgba(0,0,0,0.28); }
 
-/* ==================== CUPERTINO CONTROLS & INPUTS ==================== */
+/* ==================== CONTROLS & INPUTS ==================== */
 .apple-segmented-control {
-  display: inline-flex;
-  padding: 3px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  border: 0.5px solid rgba(255, 255, 255, 0.08);
-  border-radius: 15px;
+  display: inline-flex; padding: 3px;
+  background: rgba(255, 246, 238, 0.05);
+  backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);
+  border: 0.5px solid rgba(255, 246, 238, 0.08); border-radius: 15px;
 }
-
 .apple-segment-btn {
-  padding: 6px 14px;
-  border-radius: 12px;
-  font-size: 11.5px;
-  font-weight: 600;
-  color: var(--ink-2);
-  letter-spacing: -0.01em;
+  padding: 6px 14px; border-radius: 12px; font-size: 11.5px; font-weight: 600;
+  color: var(--ink-2); letter-spacing: -0.01em; white-space: nowrap;
   transition: color 0.2s var(--ease-out), background 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
-  white-space: nowrap;
 }
 .apple-segment-btn.active {
-  background: var(--titanium-crimson);
-  color: #FFFFFF;
-  box-shadow: 0 2px 10px rgba(255, 55, 95, 0.32), inset 0 0.5px 0 rgba(255, 255, 255, 0.28);
+  background: linear-gradient(180deg, #D6A39B 0%, #C98A86 100%);
+  color: #1a1210;
+  box-shadow: 0 2px 10px rgba(201, 138, 134, 0.32), inset 0 0.5px 0 rgba(255, 255, 255, 0.35);
 }
 
 .apple-grouped-list {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  border: 0.5px solid rgba(255, 255, 255, 0.07);
-  border-radius: 18px;
-  overflow: hidden;
+  background: rgba(255, 246, 238, 0.03);
+  backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);
+  border: 0.5px solid rgba(255, 246, 238, 0.07); border-radius: 18px; overflow: hidden;
 }
-
 .apple-grouped-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.05);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 16px; border-bottom: 0.5px solid rgba(255, 246, 238, 0.05);
   transition: background 0.15s ease;
 }
 .apple-grouped-row:last-child { border-bottom: none; }
-.apple-grouped-row:hover { background: rgba(255, 255, 255, 0.03); }
+.apple-grouped-row:hover { background: rgba(255, 246, 238, 0.03); }
 
 .dynamic-island {
   background: rgba(0, 0, 0, 0.86);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  border: 0.5px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.8);
-  border-radius: 9999px;
+  backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+  border: 0.5px solid rgba(255, 246, 238, 0.12);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.8); border-radius: 9999px;
   transition: all 0.3s cubic-bezier(0.34, 1.4, 0.64, 1);
 }
 
 .apple-input {
-  background: rgba(255, 255, 255, 0.04);
-  border: 0.5px solid rgba(255, 255, 255, 0.10);
-  border-radius: 13px;
-  color: #FFFFFF;
-  font-size: 14px;               /* 14px+ avoids iOS zoom-on-focus */
-  padding: 9px 13px;
-  outline: none;
+  background: rgba(255, 246, 238, 0.04);
+  border: 0.5px solid rgba(255, 246, 238, 0.10);
+  border-radius: 13px; color: #FFFFFF; font-size: 14px; padding: 9px 13px; outline: none;
   transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .apple-input:focus {
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 246, 238, 0.07);
   border-color: var(--titanium-rose);
-  box-shadow: 0 0 0 3px rgba(255, 122, 147, 0.18);
+  box-shadow: 0 0 0 3px rgba(221, 160, 151, 0.18);
 }
 
 .apple-btn-primary {
-  background: linear-gradient(180deg, #FF4E71 0%, #FF375F 100%);
-  color: #FFFFFF;
-  border-radius: 15px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  box-shadow: 0 3px 16px rgba(255, 55, 95, 0.30), inset 0 0.5px 0 rgba(255, 255, 255, 0.36);
+  background: linear-gradient(180deg, #D9A69D 0%, #C98A86 100%);
+  color: #1a1210; border-radius: 15px; font-weight: 700; letter-spacing: -0.01em;
+  box-shadow: 0 3px 16px rgba(201, 138, 134, 0.30), inset 0 0.5px 0 rgba(255, 255, 255, 0.4);
   transition: transform 0.15s var(--ease-out), filter 0.15s ease, box-shadow 0.15s ease;
 }
-.apple-btn-primary:hover {
-  filter: brightness(1.06);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 22px rgba(255, 55, 95, 0.36), inset 0 0.5px 0 rgba(255, 255, 255, 0.4);
-}
-.apple-btn-primary:active {
-  transform: scale(0.975);
-  filter: brightness(0.96);
-}
+.apple-btn-primary:hover { filter: brightness(1.05); transform: translateY(-1px); }
+.apple-btn-primary:active { transform: scale(0.975); filter: brightness(0.97); }
 
 .apple-btn-titanium {
-  background: linear-gradient(180deg, rgba(255, 122, 147, 0.16) 0%, rgba(255, 122, 147, 0.06) 100%);
+  background: linear-gradient(180deg, rgba(221, 160, 151, 0.16) 0%, rgba(221, 160, 151, 0.06) 100%);
   color: var(--titanium-silk);
-  border: 0.5px solid rgba(255, 122, 147, 0.32);
-  border-radius: 15px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  border: 0.5px solid rgba(221, 160, 151, 0.32);
+  border-radius: 15px; font-weight: 600; letter-spacing: -0.01em;
   box-shadow: inset 0 0.5px 0 rgba(255, 255, 255, 0.26), 0 3px 12px rgba(0, 0, 0, 0.35);
   transition: background 0.2s var(--ease-out), border-color 0.2s var(--ease-out), color 0.2s ease;
 }
 .apple-btn-titanium:hover {
-  background: linear-gradient(180deg, rgba(255, 122, 147, 0.22) 0%, rgba(255, 122, 147, 0.10) 100%);
-  border-color: rgba(255, 122, 147, 0.46);
-  color: #FFFFFF;
+  background: linear-gradient(180deg, rgba(221, 160, 151, 0.22) 0%, rgba(221, 160, 151, 0.10) 100%);
+  border-color: rgba(221, 160, 151, 0.46); color: #FFFFFF;
 }
 
-.apple-ring {
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
-  transition: stroke-dashoffset 1s cubic-bezier(0.34, 1.3, 0.64, 1);
-}
-
+.apple-ring { transform: rotate(-90deg); transform-origin: 50% 50%; transition: stroke-dashoffset 1s cubic-bezier(0.34, 1.3, 0.64, 1); }
 .tabular-nums { font-variant-numeric: tabular-nums; }
 
-/* Keyboard focus — visible, on-brand (a11y quality floor) */
-:focus-visible {
-  outline: 2px solid var(--titanium-rose);
-  outline-offset: 2px;
-}
+:focus-visible { outline: 2px solid var(--titanium-rose); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; } }
 
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  * { transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; }
-}
-
-/* Minimalist scrollbar */
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.16); border-radius: 9999px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(255, 122, 147, 0.4); }
+::-webkit-scrollbar-thumb { background: rgba(255, 246, 238, 0.16); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(221, 160, 151, 0.4); }

@@ -861,7 +861,7 @@ function sendDirectorVoiceMemo() {
   AppStore.messages[clientId].push({
     id: Date.now(),
     sender: 'director',
-    text: '🎙️ Voice Memo from Araceli (0:44s): "Sofia, I reviewed your hip thrust angle. Excellent pelvic lock. Keep the ribcage anchored on the top phase."',
+    text: ' Voice Memo from Araceli (0:44s): "Sofia, I reviewed your hip thrust angle. Excellent pelvic lock. Keep the ribcage anchored on the top phase."',
     time: timeStr
   });
 
@@ -1101,7 +1101,7 @@ function submitCheckinSheet(e) {
   AppStore.messages.sofia.push({
     id: Date.now(),
     sender: 'athlete',
-    text: `📸 Biometric Check-in Transmitted: Morning Fasting Weight ${weight}. Front, lateral and posterior progression scans verified.`,
+    text: ` Biometric Check-in Transmitted: Morning Fasting Weight ${weight}. Front, lateral and posterior progression scans verified.`,
     time: timeStr
   });
   saveStore();
